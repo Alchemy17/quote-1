@@ -8,10 +8,19 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option'),
-    new Quote(2, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option'),
-    new Quote(3, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option'),
-  ]
+    new Quote(1, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2018, 3, 14)),
+    new Quote(2, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2018, 4, 14)),
+    new Quote(3, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2020, 3, 14)),
+  ];
+  deleteGoal(isComplete, index) {
+    if (isComplete) {
+      const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
+
+      if (toDelete) {
+        this.quotes.splice(index, 1);
+      }
+    }
+  }
 
   toogleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
