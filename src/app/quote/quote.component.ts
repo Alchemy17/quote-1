@@ -12,7 +12,7 @@ export class QuoteComponent implements OnInit {
     new Quote(2, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2018, 4, 14)),
     new Quote(3, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2020, 3, 14)),
   ];
-  deleteGoal(isComplete, index) {
+  deleteQuote(isComplete, index) {
     if (isComplete) {
       const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
 

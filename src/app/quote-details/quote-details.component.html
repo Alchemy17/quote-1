@@ -1,5 +1,5 @@
 <p>
-  {{quote.name}} {{quote.author}}
+  {{quote.name}}
 </p>
 <p> {{quote.completeDate|dateCount}} days Has passed since this quote was created</p>
-<button (click)='quoteComplete(true)'> Complete </button>
+<button class="btn btn-danger" (click)='quoteDelete(true)'> Delete Quote </button>
