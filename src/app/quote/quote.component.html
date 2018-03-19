@@ -1,0 +1,13 @@
+<h1>CREATE YOUR QUOTES FELLAS</h1>
+<hr/>
+<ul>
+  <div *ngFor='let quote of quotes; let i = index'>
+    <li>{{quote.description}}</li>
+    <button (click)='toogleDetails(i)'>Toogle Details</button>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='completeQuote($event,i)'>
+
+    </app-quote-details>
+  </div>
+
+</ul>
+<p *ngIf='quotes.length > 2'>You have too many quotes</p>
