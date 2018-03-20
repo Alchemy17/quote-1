@@ -2,4 +2,17 @@
   {{quote.name}}
 </p>
 <p> {{quote.completeDate|dateCount}} days Has passed since this quote was created</p>
+<div class="row">
+  <div class="col-md-6">
+    <a href="" (click)="voteUp()">
+      <i class="fas fa-thumbs-up iconFont"></i>
+    </a> ({{likes}})
+  </div>
+  <div class="col-md-6">
+    <a href="" (click)="voteDown()">
+      <i class="fas fa-thumbs-up iconFont"></i>
+    </a> ({{disLikes}})
+  </div>
+</div>
+
 <button class="btn btn-danger" (click)='quoteDelete(true)'> Delete Quote </button>
